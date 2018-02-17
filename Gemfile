@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.3.4'
+
 gem 'rails', '4.2.7.1'
 gem 'pg', '~> 0.15'
 gem 'sass-rails', '~> 5.0'
@@ -12,6 +14,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Features
 gem 'devise'
+
+# Assets
+gem 'bootstrap', '~> 4.0.0'
 
 group :development, :test do
   gem 'pry'
