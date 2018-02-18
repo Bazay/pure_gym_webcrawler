@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  gym_id     :integer
-#  time       :datetime
+#  time       :string
 #  duration   :integer
 #  status     :string
 #  created_at :datetime         not null

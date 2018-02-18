@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20180218140117) do
 
   create_table "lessons", force: :cascade do |t|
     t.integer  "gym_id"
-    t.datetime "time"
+    t.string   "time"
     t.integer  "duration"
     t.string   "status"
     t.datetime "created_at", null: false
