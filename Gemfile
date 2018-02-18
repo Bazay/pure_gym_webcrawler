@@ -16,7 +16,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 
 # Assets
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '4.0.0.alpha6'
 
 group :development, :test do
   gem 'pry'

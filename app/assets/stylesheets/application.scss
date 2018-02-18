@@ -1,2 +1,8 @@
 @import 'bootstrap';
-@import 'signin';
+@import 'users/sessions';
+
+$header-height: 30px;
+
+.container {
+  margin-top: $header-height;
+}
