@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180217165044) do
+ActiveRecord::Schema.define(version: 20180218140117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "gyms", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.integer  "gym_id"
+    t.datetime "time"
+    t.integer  "duration"
+    t.string   "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "lessons", ["gym_id"], name: "index_lessons_on_gym_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",               default: "", null: false
@@ -31,10 +48,12 @@ ActiveRecord::Schema.define(version: 20180217165044) do
     t.string   "gym_login_password",  default: "", null: false
     t.string   "gym_login_url",       default: "", null: false
     t.integer  "gym_refresh_period"
+    t.string   "role"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "lessons", "gyms"
 end

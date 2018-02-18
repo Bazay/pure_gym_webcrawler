@@ -17,6 +17,7 @@
 #  gym_login_password  :string           default(""), not null
 #  gym_login_url       :string           default(""), not null
 #  gym_refresh_period  :integer
+#  role                :string
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #
@@ -28,9 +29,12 @@ class User < ActiveRecord::Base
 
   before_validation :default_attribute_values
 
+  validates :role, inclusion: { in: %w[user admin] }
+
   private
 
   def default_attribute_values
+    self.role = :user unless role
     self.gym_refresh_period = 7 unless gym_refresh_period
   end
 end

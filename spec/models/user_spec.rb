@@ -17,6 +17,7 @@
 #  gym_login_password  :string           default(""), not null
 #  gym_login_url       :string           default(""), not null
 #  gym_refresh_period  :integer
+#  role                :string
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #

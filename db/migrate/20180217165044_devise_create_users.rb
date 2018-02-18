@@ -39,6 +39,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :gym_login_password, null: false, default: ''
       t.string :gym_login_url, null: false, default: ''
       t.integer :gym_refresh_period
+      t.string :role
 
       t.timestamps null: false
     end
